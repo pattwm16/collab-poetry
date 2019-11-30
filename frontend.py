@@ -23,7 +23,7 @@ class App(QMainWindow):
         self.initUI()
         self.sess = gpt2.start_tf_sess()
         gpt2.load_gpt2(self.sess,
-                      run_name="run2",
+                      run_name="run1",
                       checkpoint_dir="checkpoint")
 
     def initUI(self):
@@ -50,13 +50,13 @@ class App(QMainWindow):
                       length=100,
                       temperature=0.7,
                       prefix=textboxValue,
-                      nsamples=1,
+                      nsamples=4,
                       batch_size=4,
                       return_as_list=True)[0]
         # clean text of utf-8 mess
         text = corr(re.sub(r'[^\x00-\x7f]',r'', text))
         print(text)
-        QMessageBox.question(self, 'Message', "Result: {}".format(text), QMessageBox.Ok, QMessageBox.Ok)
+        QMessageBox.question(self, 'Message', text, QMessageBox.Ok, QMessageBox.Ok)
         self.textbox.setText("")
 
 if __name__ == '__main__':

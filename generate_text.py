@@ -32,7 +32,7 @@ def generate_text(user_inp, out_len=100):
 sess = gpt2.start_tf_sess()
 # load the model
 gpt2.load_gpt2(sess,
-              run_name="run2",
+              run_name="run1",
               checkpoint_dir="checkpoint")
 
 # start cli loop
