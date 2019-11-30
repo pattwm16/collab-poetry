@@ -16,3 +16,6 @@ In order to train a NLP model, you need a large collection of text. Fortunately,
 
 ## Training the model
 Originally, I was planning on training my own model locally. However, given the time constraints of this project I ended up training the GPT2 model on my scraped corpus. Specifically, I used the [Google collab notebook](https://colab.research.google.com/drive/1VLG8e7YSEwypxU-noRNhsv5dW4NfTGce#forceEdit=true&sandboxMode=true&scrollTo=8DKMc0fiej4N) created by [Max Woolf](http://minimaxir.com/). This notebook allows anyone to upload a text corpus, train a GPT2 model using a GPU, and provides an easy API to interact with the model. I trained the 124M model version for 1000 epochs.
+
+## Producing poetry
+Finally, the model can be used to produce poetry with the audience using some seed word/phrase. This functionality is captured in `generate_text.py`.
