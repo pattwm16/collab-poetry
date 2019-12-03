@@ -22,7 +22,7 @@ def generate_text(user_inp, out_len=300):
 	"""
 	text = gpt2.generate(sess,
 				  length=out_len,
-				  temperature=0.74,
+				  temperature=0.78,
 				  prefix=user_inp,
 				  nsamples=5,
 				  batch_size=5,
@@ -47,6 +47,7 @@ while True:
 		name = str(input())
 		print(term.cyan + term.bold + "How should we start our poem?" + term.normal)
 		prompt = str(input())
+		print(term.cyan + term.bold + "Alright, I'm thinking..." + term.normal)
 		if prompt == "end_program":
 			break
 		output = generate_text(prompt)
@@ -60,5 +61,3 @@ while True:
 		input(term.bold("\nPress Enter to continue..."))
 		os.system('cls' if os.name == 'nt' else 'clear')
 
-
-print(corr(text))
